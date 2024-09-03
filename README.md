@@ -1,4 +1,4 @@
-## Trabalho 3 de Estrutura de Dados 🐼
+## Trabalho 4 de Estrutura de Dados 🐼
 
 🤯 Funções para serem implementadas:
 01. Criar Lista: Inicializa uma nova lista vazia.
