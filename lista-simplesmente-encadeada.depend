@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1725400786 source:c:\users\ana\documents\lista-simplesmente-encadeada\lista-simplesmente-encadeada\main.c
+	"lse.h"
+
+1725414770 c:\users\ana\documents\lista-simplesmente-encadeada\lista-simplesmente-encadeada\lse.h
+	<stdio.h>
+	<stdlib.h>
+
+1725406147 source:c:\users\ana\documents\lista-simplesmente-encadeada\lista-simplesmente-encadeada\lse.c
+	"lse.h"
+	<stdio.h>
+	<stdlib.h>
+
