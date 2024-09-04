@@ -26,7 +26,7 @@ Lista* criarLista() {
 void inserirElementoInicio(Lista* lista, int valor) {
     No* novo = (No*) malloc(sizeof(No));
     novo->valor = valor;
-    novo->prox = lista->inicio; //cabeça
+    novo->prox = lista->inicio;
     lista->inicio = novo;
     lista->tamanho++;
 
