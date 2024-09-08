@@ -29,25 +29,25 @@ void inserirElementoInicio(Lista* lista, int valor) {
     novo->prox = lista->inicio;
     lista->inicio = novo;
     lista->tamanho++;
-
+    imprimirLista(lista);
 }
 
-void inserirElementoFinal(Lista* lista, int valor){
-    No* novo = (No*) malloc(sizeof(No));
+void inserirElementoFinal(Lista* lista, int valor) {
+    No* novo = (No*) malloc(sizeof(No));  // Aloca memória para o novo nó
     novo->valor = valor;
-    novo->prox = NULL;
+    novo->prox = NULL;  // Como o nó é o último, o próximo será NULL
 
-    if (lista->inicio == NULL) { //verifica se a lista ta vazia
-        lista->inicio = novo;
+    if (lista->inicio == NULL) {  // Verifica se a lista está vazia
+        lista->inicio = novo;  // Se estiver vazia, o novo nó será o primeiro
     } else {
         No* atual = lista->inicio;
-        while (atual->prox != NULL) { // loop ate o final da lista
-            atual->prox;
+        while (atual->prox != NULL) {  // Loop até o final da lista
+            atual = atual->prox;  // Move para o próximo nó
         }
-        atual->prox = novo;
+        atual->prox = novo;  // Define o próximo do último nó como o novo nó
     }
-    lista->tamanho++;
-
+    lista->tamanho++;  // Atualiza o tamanho da lista
+    imprimirLista(lista);  // Imprime a lista após a inserção
 }
 
 void inserirElementoPosicao(Lista* lista, int valor, int posicao){
@@ -72,7 +72,7 @@ void inserirElementoPosicao(Lista* lista, int valor, int posicao){
     novo->prox = atual->prox;
     atual->prox = novo;
     lista->tamanho++;
-
+    imprimirLista(lista);
 }
 
 void removerElementoPosicao(Lista* lista, int posicao){
@@ -96,7 +96,7 @@ void removerElementoPosicao(Lista* lista, int posicao){
     }
 
     lista->tamanho--;
-
+    imprimirLista(lista);
 }
 
 void removerElementoValor(Lista *lista, int valor){
@@ -121,7 +121,7 @@ void removerElementoValor(Lista *lista, int valor){
 
     free(atual);
     lista->tamanho--;
-
+    imprimirLista(lista);
 
 }
 
@@ -135,7 +135,6 @@ int obterElementoPosicao(Lista* lista, int posicao){
     for (int i = 0; i < posicao; i++) {
         atual = atual->prox;
     }
-
     return atual->valor;
 
 
@@ -213,7 +212,7 @@ struct Lista* lista = criarLista();
                 scanf("%d", &valor);
                 inserirElementoInicio(lista, valor);
                 printf("Elemento inserido no inicio com sucesso!\n");
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 2:
@@ -221,7 +220,7 @@ struct Lista* lista = criarLista();
                 scanf("%d", &valor);
                 inserirElementoFinal(lista, valor);
                 printf("Elemento inserido no final com sucesso!\n");
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 3:
@@ -231,7 +230,7 @@ struct Lista* lista = criarLista();
                 scanf("%d", &posicao);
                 inserirElementoPosicao(lista, valor, posicao);
                 printf("Elemento inserido na posicao %d com sucesso!\n", posicao);
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 4:
@@ -239,7 +238,7 @@ struct Lista* lista = criarLista();
                 scanf("%d", &valor);
                 removerElementoValor(lista, valor);
                 printf("Elemento removido com sucesso!\n");
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 5:
@@ -247,7 +246,7 @@ struct Lista* lista = criarLista();
                 scanf("%d", &posicao);
                 removerElementoPosicao(lista, posicao);
                 printf("Elemento na posicao %d removido com sucesso!\n", posicao);
-                sleep(2);
+                system("pause");;
                 system("cls || clear");
                 break;
             case 6:
@@ -257,7 +256,7 @@ struct Lista* lista = criarLista();
                 if (valor != -1) {
                     printf("Valor na posicao %d: %d\n", posicao, valor);
                 }
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 7:
@@ -269,27 +268,29 @@ struct Lista* lista = criarLista();
                 } else {
                     printf("Valor nao encontrado\n");
                 }
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 8:
                 printf("Tamanho da lista: %d\n", tamanhoLista(lista));
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 9:
                 printf("Lista: ");
                 imprimirLista(lista);
-                sleep(2);
+                system("pause");
                 system("cls || clear");
                 break;
             case 0:
                 liberarLista(lista);
                 printf("Saindo...\n");
+                sleep(1);
+                system("cls || clear");
                 break;
             default:
                 printf("Opcao invalida\n");
-                sleep(2);
+                sleep(1);
                 system("cls || clear");
                 break;
         }
